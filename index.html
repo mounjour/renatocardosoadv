@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Advogado - Assessoria Jurídica</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
+        :root{
+            --brilho: #ffd59a63;
+            --orange:orange;
+            --fundo:  #1C263E;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -33,15 +40,34 @@
             color: black;
             border: 2px solid rgba(255, 255, 255, 0.3);
             padding: 16px 40px;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
             cursor: pointer;
             letter-spacing: 0.5px;
+              box-shadow: 0px 0px 1px 1px #0000001a;
+            animation: animate-pulse 3s linear infinite;
         }
-
+        @keyframes animate-pulse{
+            0%{
+                box-shadow: 0 0 0 0 var(--brilho),  0 0 0 0 var(--brilho);
+            }
+            40%{
+                box-shadow: 0 0 0 50px rgba(255,109,74,0.0),  0 0 0 0 var(--brilho);
+            }
+            80%{
+                box-shadow: 0 0 0 50px rgba(255,109,74,0.0),  0 0 0 30px rgba(255,109,74,0);
+            }
+            100%{
+                box-shadow: 0 0 0 0 rgba(255,109,74,0.0),  0 0 0 30px rgba(255,109,74,0);
+            }
+        }
+        .btn i{
+            font-size: 30px;
+            margin-right: 10px;
+        }
         .btn:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.5);
@@ -61,6 +87,7 @@
         }
 
         .hero-content {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -75,12 +102,14 @@
             flex: 1;
             max-width: 600px;
         }
-
-        .hero-logo {
+        .hero-logo2{
+            display: none;
+        }
+        .hero-logo,.hero-logo2 {
             margin-bottom: 40px;
         }
 
-        .hero-logo img {
+        .hero-logo img,.hero-logo2 img{
             width: 350px;
             height: auto;
         }
@@ -117,7 +146,7 @@
 
         /* About Section */
         .about {
-            background: #1a1a1a;
+            background: var(--fundo);
             padding: 100px 0;
         }
 
@@ -129,7 +158,7 @@
         }
 
         .about-image img {
-            width: 100%;
+            width: 80%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
@@ -145,7 +174,9 @@
             line-height: 1.3;
             margin-bottom: 25px;
         }
-
+        .about-content p strong{
+            color: var(--orange);
+        }
         .about-content p {
             font-size: 1.1rem;
             line-height: 1.7;
@@ -187,9 +218,14 @@
         }
 
         .carousel-section .container {
+            flex-direction: column;
             text-align: center;
+            align-items: center;
+            display: flex;
         }
-
+        .carousel-section .container .btn{
+            background: var(--orange);
+        }
         .carousel-section h2 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -229,9 +265,16 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 50px;
+            display: flex;
+            align-items: center;
             text-align: left;
             transition: all 0.3s ease;
             scroll-snap-align: start;
+        }
+        .carousel-item .lado{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .carousel-item:hover {
@@ -241,9 +284,8 @@
         }
 
         .carousel-item img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
+            width: auto;
+            height: 250px;
             border-radius: 10px;
             margin-bottom: 30px;
         }
@@ -303,50 +345,38 @@
             right: -10px;
         }
 
-        @media (max-width: 768px) {
-            .carousel-container {
-                padding: 0 40px;
-            }
-            
-            .carousel-item {
-                padding: 30px;
-            }
-            
-            .carousel-item h3 {
-                font-size: 1.8rem;
-            }
-            
-            .carousel-item p {
-                font-size: 1.1rem;
-            }
-            
-            .carousel-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .carousel-item {
-                padding: 25px;
-            }
-            
-            .carousel-item h3 {
-                font-size: 1.5rem;
-            }
-            
-            .carousel-item p {
-                font-size: 1rem;
-            }
-        }
-
         /* Cards Section */
         .cards-section {
             background: #222;
             padding: 80px 0;
         }
-
+        .cards-section .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .carousel-section .container .btn,.cards-section .container .btn{
+            width: inherit;
+        }
+        .cards-section .container .btn{
+            margin-top: 50px;
+            background: var(--orange);
+            animation: animate-pulse2 3s linear infinite;
+        }
+        @keyframes animate-pulse2{
+            0%{
+                box-shadow: 0 0 0 0 var(--orange),  0 0 0 0 var(--orange);
+            }
+            40%{
+                box-shadow: 0 0 0 50px rgba(255,109,74,0.0),  0 0 0 0 var(--orange);
+            }
+            80%{
+                box-shadow: 0 0 0 50px rgba(255,109,74,0.0),  0 0 0 30px rgba(255,109,74,0);
+            }
+            100%{
+                box-shadow: 0 0 0 0 rgba(255,109,74,0.0),  0 0 0 30px rgba(255,109,74,0);
+            }
+        }
         .cards-section h2 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -412,7 +442,6 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -502,11 +531,15 @@
             padding: 60px 0 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+        .footer-content a{
+            text-decoration: none;
+            color: white;
+        }
         .footer-content {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 60px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
             margin-bottom: 40px;
         }
 
@@ -560,6 +593,89 @@
             font-size: 0.9rem;
         }
 
+        @media (max-width: 768px) {
+            .about-image{
+                order: 2;
+            }
+            .carousel-item{
+                flex-direction: column;
+            }
+
+            .carousel-container
+            .hero-content::before{
+                display: flex;
+                position: absolute;
+                bottom: 0px;
+                content: "";
+                width: 100%;
+                height: 10%;
+                z-index: 1;
+                background:linear-gradient(to top, #1C263E, transparent) ;
+            }
+            .carousel-section .container .btn, .cards-section .container .btn{
+                width: 100%;
+            }
+            .hero{
+                height: 140vh;
+                background: url("fundo-lp2.png");
+                background-size: cover;
+                background-position: center;
+            }
+            .about-image img{
+                width: 100%;
+            }
+            .about-content h2,.carousel-section h2, .cards-section h2{
+                font-size: 1.8rem;
+            }
+            .about-content p{
+                text-align: justify;
+            }
+            .carousel-container {
+                padding: 0px;
+            }
+            
+            .carousel-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 calc(100% - 0px);
+                max-width: calc(100% - 0px);
+                padding: 30px;
+            }
+            .carousel-item .lado{
+                order: 2;
+            }
+            .carousel-item img{
+                order: 1;
+                width: 100%;
+                height: auto;
+            }
+            .carousel-item h3 {
+                font-size: 1.8rem;
+            }
+            
+            .carousel-item p {
+                font-size: 0.9rem;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-item {
+                padding: 25px;
+            }
+            
+            .carousel-item h3 {
+                font-size: 1.5rem;
+            }
+
+        }
         /* Responsividade */
         @media (max-width: 1024px) {
             .hero-text h1 {
@@ -572,6 +688,20 @@
         }
 
         @media (max-width: 768px) {
+            .hero-logo{
+                display: none;
+            }
+            .hero-logo2{
+                justify-content: center;
+                display: flex;
+            }
+            .hero-logo2 img{
+                width: 210px;
+            }
+            .btn{
+                width: 100%;
+                font-size: 1.1rem;
+            }
             .hero-content {
                 flex-direction: column;
                 justify-content: center;
@@ -633,9 +763,12 @@
                 <div class="hero-logo">
                     <img src="logo.png" alt="Logo">
                 </div>
+                <div class="hero-logo2">
+                    <img src="logo2.png" alt="Logo">
+                </div>
                 <h1>Enfrentar um crime assusta. Ter alguém que te escuta e te defende faz toda a diferença.</h1>
                 <p class="subtitle">Assessoria jurídica com escuta ativa, estratégia e discrição — da delegacia às instâncias superiores. Fale agora pelo WhatsApp.</p>
-                <a href="#" class="btn">Fale com um profissional</a>
+                <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Fale com um profissional</a>
             </div>
             <div class="hero-image">
             </div>
@@ -646,20 +779,19 @@
     <section class="about">
         <div class="container">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1575505586569-4c0d9b9b9b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Escritório">
+                <img src="escritorio.jpeg" alt="Escritório">
             </div>
             <div class="about-content">
-                <h2>13 anos guiando pessoas com inteligência, preparo e coragem.</h2>
-                <p>Meu compromisso é lutar com seriedade por quem precisa de orientação firme e atuação estratégica. Cada caso carrega um universo de complexidades, e é com foco, preparo e calma que conduzo cada etapa do processo.</p>
-                <p>Ao longo da minha trajetória, enfrentei casos delicados e desafiadores. A experiência me ensinou a agir com inteligência e posicionamento claro, sempre com respeito à dignidade de quem confia sua história às minhas mãos.</p>
-                <p>Atuo presencialmente na região metropolitana de Porto Alegre e na Grande Florianópolis. Para demais cidades e estados, realizo atendimentos on-line com a mesma dedicação, sigilo e cuidado em cada detalhe.</p>
+                <h2>11 anos guiando pessoas com inteligência, preparo e coragem.</h2>
+                <p>Com uma trajetória de dedicação à justiça, o advogado <strong>Thiago Cardoso</strong> consolidou sua reputação ao longo de <strong>10 anos de atuação</strong>. Especialista na área penal, ele pauta seu trabalho pela análise minuciosa de cada caso, unindo conhecimento técnico a uma postura estratégica essencial para enfrentar desafios jurídicos complexos.</p>
+                <p>Ao longo de sua carreira, Thiago já atuou em <strong>+ 300 processos</strong>, acumulando vasta experiência prática em tribunais e audiências. Essa bagagem permite uma visão aguda do sistema processual, garantindo que o direito de defesa seja exercido com o máximo <strong>rigor ético</strong> e eficiência em todas as instâncias.</p>
+                <p>Seu trabalho é reconhecido pela transparência e pela busca constante por soluções inovadoras. Como defensor da <strong>liberdade</strong> e do devido processo legal, sua atuação combativa transforma seu nome em uma referência de confiança e <strong>excelência jurídica</strong> no cenário criminal.</p>
                 
                 <div class="oab-numbers">
-                    <p>OAB/SC 33.163</p>
-                    <p>OAB/RS 136.111-A</p>
+                    <p>OAB 54.518</p>
                 </div>
 
-                <a href="#" class="btn">Tire suas dúvidas</a>
+                <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Tire suas dúvidas</a>
             </div>
         </div>
     </section>
@@ -675,37 +807,41 @@
                 
                 <div class="carousel-track" id="carouselTrack">
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Direito Criminal">
-                        <h3>Direito Criminal</h3>
-                        <p>Defesa estratégica em todas as fases do processo criminal, desde o inquérito policial até os tribunais superiores. Atuação focada em garantir seus direitos fundamentais, liberdade e a melhor solução para seu caso, seja na esfera estadual ou federal.</p>
-                        <p>Com mais de uma década de experiência, desenvolvemos teses de defesa sólidas e personalizadas para cada situação, considerando todas as nuances e particularidades do seu caso.</p>
-                        <p class="highlight">• Inquérito policial • Ação penal • Recursos • Tribunais superiores</p>
+                        <div class="lado">
+                            <h3>Direito Criminal</h3>
+                            <p>Defesa estratégica em todas as fases do processo criminal, desde o inquérito policial até os tribunais superiores. Atuação focada em garantir seus direitos fundamentais, liberdade e a melhor solução para seu caso, seja na esfera estadual ou federal.</p>
+                        </div>
+                        <img src="blog/blog1.webp" alt="Direito Criminal">
+
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Tribunal do Júri">
-                        <h3>Tribunal do Júri</h3>
-                        <p>Atuação especializada em crimes dolosos contra a vida, com preparo técnico e argumentação persuasiva perante o conselho de sentença. Preparação minuciosa de teses defensivas, estudo aprofundado das provas e estratégias personalizadas para cada julgamento.</p>
-                        <p>Nosso diferencial está na capacidade de traduzir teses jurídicas complexas em argumentos claros e convincentes para os jurados, sempre com respeito à dignidade e à história de cada cliente.</p>
-                        <p class="highlight">• Homicídio • Feminicídio • Infanticídio • Aborto • Lesão corporal seguida de morte</p>
+                        <div class="lado">
+                            <h3>Tribunal do Júri</h3>
+                            <p>Atuação especializada em crimes dolosos contra a vida, com preparo técnico e argumentação persuasiva perante o conselho de sentença. Preparação minuciosa de teses defensivas, estudo aprofundado das provas e estratégias personalizadas para cada julgamento.</p>
+                        </div>
+                        <img src="blog/blog2.webp" alt="Tribunal do Júri">
+
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Execução Penal">
-                        <h3>Execução Penal</h3>
-                        <p>Acompanhamento completo de todas as fases da execução penal, desde o ingresso no sistema prisional até a liberdade definitiva. Atuamos na conquista e manutenção de benefícios, progressões de regime e todas as questões relacionadas ao cumprimento da pena.</p>
-                        <p>Acompanhamos de perto cada etapa, garantindo que todos os prazos sejam cumpridos e que seus direitos sejam respeitados durante todo o período de execução da pena.</p>
-                        <p class="highlight">• Progressão de regime • Livramento condicional • Indulto • Comutação de pena • Transferência de presídio</p>
+                        <div class="lado">
+                            <h3>Execução Penal</h3>
+                            <p>Acompanhamento completo de todas as fases da execução penal, desde o ingresso no sistema prisional até a liberdade definitiva. Atuamos na conquista e manutenção de benefícios, progressões de regime e todas as questões relacionadas ao cumprimento da pena.</p>
+                        </div>
+                        <img src="blog/blog3.webp" alt="Execução Penal">
+
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Habeas Corpus">
-                        <h3>Habeas Corpus</h3>
-                        <p>Elaboração e impetração estratégica de habeas corpus em todas as instâncias, desde os tribunais de justiça até o Supremo Tribunal Federal. Atuação emergencial 24 horas para situações que exigem resposta imediata.</p>
-                        <p>Nossa experiência na impetração de habeas corpus nos permite identificar rapidamente as melhores teses para garantir a liberdade ou prevenir constrangimentos ilegais, com atuação ágil e tecnicamente fundamentada.</p>
-                        <p class="highlight">• Habeas corpus preventivo • Habeas corpus liberatório • Habeas corpus contra ilegalidades • Relaxamento de prisão</p>
+                        <div class="lado">
+                            <h3>Habeas Corpus</h3>
+                            <p>Elaboração e impetração estratégica de habeas corpus em todas as instâncias, desde os tribunais de justiça até o Supremo Tribunal Federal. Atuação emergencial 24 horas para situações que exigem resposta imediata.</p>
+                        </div>
+                        <img src="blog/blog4.webp" alt="Habeas Corpus">
+
                     </div>
                 </div>
             </div>
 
-            <a href="#" class="btn">Fale com um profissional</a>
+            <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Fale com um Advogado</a>
         </div>
     </section>
 
@@ -713,51 +849,51 @@
     <section class="cards-section">
         <div class="container">
             <h2>Conteúdos que orientam e protegem — veja o que você precisa saber</h2>
-            
             <div class="cards-grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Conteúdo 1">
+                    <img src="cards/card1.png" alt="Conteúdo 1">
                     <div class="card-content">
                         <h3>Direitos do acusado</h3>
                         <p>Conheça seus direitos fundamentais em um processo criminal e como eles podem protegê-lo.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Conteúdo 2">
+                    <img src="cards/card2.png" alt="Conteúdo 2">
                     <div class="card-content">
                         <h3>Difamação e calúnia</h3>
                         <p>Entenda as diferenças entre crimes contra a honra e como se defender dessas acusações.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Conteúdo 3">
+                    <img src="cards/card3.png" alt="Conteúdo 3">
                     <div class="card-content">
                         <h3>Flagrante delito</h3>
                         <p>Saiba o que fazer em caso de prisão em flagrante e quais são seus direitos nesse momento.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Conteúdo 4">
+                    <img src="cards/card4.png" alt="Conteúdo 4">
                     <div class="card-content">
                         <h3>Fiança criminal</h3>
                         <p>Quando é possível pagar fiança e como funciona esse direito em diferentes tipos de crime.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Conteúdo 5">
+                    <img src="cards/card5.png" alt="Conteúdo 5">
                     <div class="card-content">
                         <h3>Progressão de regime</h3>
                         <p>Como funciona a progressão de regime e os requisitos para conquistar esse benefício.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Conteúdo 6">
+                    <img src="cards/card6.png" alt="Conteúdo 6">
                     <div class="card-content">
                         <h3>Prescrição penal</h3>
                         <p>Entenda o que é prescrição penal e quando ela pode beneficiar o acusado.</p>
                     </div>
                 </div>
             </div>
+            <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Quero mais informações</a>
         </div>
     </section>
 
@@ -834,35 +970,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col">
-                    <h4>Sobre o escritório</h4>
-                    <p>Atuação especializada em direito criminal, com mais de 13 anos de experiência na defesa de clientes em Porto Alegre, Florianópolis e em todo o Brasil por meio de atendimento online.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Contato</h4>
-                    <p>Porto Alegre/RS</p>
-                    <p>Florianópolis/SC</p>
-                    <p>(51) 99999-9999</p>
-                    <p>(48) 99999-9999</p>
-                    <p>contato@advogado.com.br</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Horário de atendimento</h4>
-                    <p>Segunda a Sexta: 9h às 18h</p>
-                    <p>Sábado: 9h às 12h (mediante agendamento)</p>
-                    <p>Atendimento 24h para urgências</p>
-                    
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="WhatsApp">📱</a>
-                    </div>
-                </div>
+                <a href="mailto:adv.thiagocardoso@hotmail.com">adv.thiagocardoso@hotmail.com</a>
+                <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es">(67) 993172313</a>
             </div>
             
             <div class="footer-bottom">
-                <p>© 2024 Advogado Criminalista. Todos os direitos reservados.</p>
+                <p>© 2025 Thiago Cardoso. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -902,7 +1015,9 @@
                 faqItem.classList.remove('active');
             }
         }
-
+        setInterval(function(){
+            moveCarousel(1)
+        }, 3000)
         // Opcional: Adiciona suporte para teclas do teclado no carrossel
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') {
