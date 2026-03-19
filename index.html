@@ -8,9 +8,9 @@
 
     <style>
         :root{
-            --brilho: #ffd59a63;
+            --brilho: #9affa763;
             --orange:orange;
-            --fundo:  #1C263E;
+            --fundo:  #283148   ;
         }
         * {
             margin: 0;
@@ -36,7 +36,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #d9bd95;
+            background: #06ff49;
             color: black;
             border: 2px solid rgba(255, 255, 255, 0.3);
             padding: 16px 40px;
@@ -133,7 +133,14 @@
             color: rgba(255, 255, 255, 0.9);
             max-width: 500px;
         }
-
+        .espanhol{
+            color: orange;
+            border-radius: 8px;
+            border: 1px solid orange;
+            width: fit-content;
+            padding: 7px 13px;
+            margin-top: 20px;
+        }
         .hero-image {
             flex: 1;
             display: flex;
@@ -220,7 +227,7 @@
         .carousel-section {
             position: relative;
             background: #222;
-            padding: 80px 0;
+            padding-top: 0px 0;
         }
 
         .carousel-section .container {
@@ -229,6 +236,16 @@
             align-items: center;
             display: flex;
         }
+        .carousel-section::before{
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top:0px;
+                width: 100%;
+                display: flex;
+                height: 8%;
+                background: linear-gradient(to bottom, var(--fundo), transparent);
+            }
         .carousel-section .container .btn{
             background: var(--orange);
         }
@@ -238,6 +255,7 @@
             line-height: 1.3;
             margin-bottom: 50px;
             max-width: 800px;
+            margin-top: 150px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -353,10 +371,33 @@
 
         /* Cards Section */
         .cards-section {
+            position: relative;
             background: #222;
             padding: 80px 0;
         }
+        .cards-section::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0px;
+            width: 100%;
+            display: flex;
+            height: 5%;
+            background: linear-gradient(to bottom,  transparent,var(--fundo));
+        }
+        .cards-section::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0px;
+            width: 100%;
+            display: flex;
+            height: 2%;
+            background: linear-gradient(to bottom, var(--fundo), transparent);
+        }
         .cards-section .container{
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -605,17 +646,7 @@
         }
         @media (max-width: 768px) {
             .carousel-section h2{
-                padding-top: 90px;
-            }
-            .carousel-section::before{
-                content: "";
-                position: absolute;
-                z-index: 1;
-                top:0px;
-                width: 100%;
-                display: flex;
-                height: 8%;
-                background: linear-gradient(to bottom, #1C263E, transparent);
+                margin-top: 70px;
             }
             .about-image{
                 order: 2;
@@ -623,18 +654,15 @@
             .carousel-item{
                 flex-direction: column;
             }
-            .carousel-section h2{
-                margin-bottom: 0px;
-            }
             .hero::before{
                 display: flex;
                 position: absolute;
                 bottom: 0px;
                 content: "";
                 width: 100%;
-                height: 10%;
+                height: 15%;
                 z-index: 1;
-                background:linear-gradient(to top, #1C263E, transparent) ;
+                background:linear-gradient(to top, var(--fundo), transparent) ;
             }
             .carousel-section .container .btn, .cards-section .container .btn{
                 width: 100%;
@@ -709,13 +737,17 @@
         }
 
         @media (max-width: 768px) {
+            .about{
+                padding: 0;
+            }
             .hero-text h1{
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
             .hero-logo{
                 display: none;
             }
             .hero-logo2{
+                margin-bottom: 30px;
                 justify-content: center;
                 display: flex;
             }
@@ -742,7 +774,7 @@
             }
 
             .subtitle {
-                text-align: start;
+                text-align: center;
                 font-size: 1.0rem;
                 margin-left: auto;
                 margin-right: auto;
@@ -792,22 +824,69 @@
                 <div class="hero-logo2">
                     <img src="logo2.png" alt="Logo">
                 </div>
-                <h1>Advogado <strong>Criminalista</strong> | Atuação em <strong>Ponta Porã/MS</strong> e região de fronteira.  <strong>Atendimento 24h</strong>. 
-Defesa técnica, ágil e estratégica em casos de:</h1>
-                <p class="subtitle">🚔 Flagrante e Audiência de Custódia.</p>
-                <p class="subtitle">🚨 Tráfico de Drogas</p>
-                <p class="subtitle">📦 Contrabando e Descaminho  </p>
-                <p class="subtitle">🚗 Apreensão e Restituição de Veículos</p>
-                <p class="subtitle">⚖️ Tribunal do Júri (Crimes contra a vida)</p>
-                <p class="subtitle">🛡️ Habeas Corpus e Recursos Criminais</p>
-                <p class="subtitle">📑 Acompanhamento em Delegacia  </p>
+                <h1>Está sendo <strong>investigado</strong>, <strong>acusado</strong> ou preso em <strong>flagrante</strong>? Problemas criminais exigem ação imediata.</h1>
+                <p class="subtitle">Fale agora comigo, sou o Dr. Thiago Cardoso, advogado criminalista e posso te ajudar!
+
+Atendimento rápido, estratégico e sigiloso - 24h (Região de Ponta Porã - MS e fronteira).
+</p>                
+                <p class="subtitle espanhol">Servicio también disponible en español.</p>
                 <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Fale com um profissional</a>
             </div>
             <div class="hero-image">
             </div>
         </div>
     </section>
-
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="container">
+            <h2>Está enfrentando algúm desses problemas?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="cards/card1.png" alt="Conteúdo 1">
+                    <div class="card-content">
+                        <h3>Defesa em Flagrante</h3>
+                        <p>Conheça seus direitos fundamentais em um processo criminal e como eles podem protegê-lo.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="cards/card2.png" alt="Conteúdo 2">
+                    <div class="card-content">
+                        <h3>Tráfico de drogas</h3>
+                        <p>Defesa técnica especializada para casos de acusação por tráfico de entorpecentes.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="cards/card3.png" alt="Conteúdo 3">
+                    <div class="card-content">
+                        <h3>Flagrante delito</h3>
+                        <p>Saiba o que fazer em caso de prisão em flagrante e quais são seus direitos nesse momento.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="cards/card4.png" alt="Conteúdo 4">
+                    <div class="card-content">
+                        <h3>Contrabando e Descaminho</h3>
+                        <p>Assessoria jurídica para crimes contra a ordem tributária e o comércio internacional. Atuamos na defesa de importadores, comerciantes e transportadores.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="cards/card5.png" alt="Conteúdo 5">
+                    <div class="card-content">
+                        <h3>Progressão de regime</h3>
+                        <p>Como funciona a progressão de regime e os requisitos para conquistar esse benefício.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="cards/card6.png" alt="Conteúdo 6">
+                    <div class="card-content">
+                        <h3>Execução penal</h3>
+                        <p>Acompanhamento da fase de cumprimento da pena, zelando pelos direitos do apenado. Realizamos pedidos de progressão de regime, livramento condicional, indulto.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Quero mais informações</a>
+        </div>
+    </section>
     <!-- About Section -->
     <section class="about">
         <div class="container">
@@ -877,59 +956,6 @@ Defesa técnica, ágil e estratégica em casos de:</h1>
             <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Fale com um Advogado</a>
         </div>
     </section>
-
-    <!-- Cards Section -->
-    <section class="cards-section">
-        <div class="container">
-            <h2>Conteúdos que orientam e protegem — veja o que você precisa saber</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <img src="cards/card1.png" alt="Conteúdo 1">
-                    <div class="card-content">
-                        <h3>Defesa em Flagrante</h3>
-                        <p>Conheça seus direitos fundamentais em um processo criminal e como eles podem protegê-lo.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="cards/card2.png" alt="Conteúdo 2">
-                    <div class="card-content">
-                        <h3>Tráfico de drogas</h3>
-                        <p>Defesa técnica especializada para casos de acusação por tráfico de entorpecentes.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="cards/card3.png" alt="Conteúdo 3">
-                    <div class="card-content">
-                        <h3>Flagrante delito</h3>
-                        <p>Saiba o que fazer em caso de prisão em flagrante e quais são seus direitos nesse momento.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="cards/card4.png" alt="Conteúdo 4">
-                    <div class="card-content">
-                        <h3>Contrabando e Descaminho</h3>
-                        <p>Assessoria jurídica para crimes contra a ordem tributária e o comércio internacional. Atuamos na defesa de importadores, comerciantes e transportadores.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="cards/card5.png" alt="Conteúdo 5">
-                    <div class="card-content">
-                        <h3>Progressão de regime</h3>
-                        <p>Como funciona a progressão de regime e os requisitos para conquistar esse benefício.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="cards/card6.png" alt="Conteúdo 6">
-                    <div class="card-content">
-                        <h3>Execução penal</h3>
-                        <p>Acompanhamento da fase de cumprimento da pena, zelando pelos direitos do apenado. Realizamos pedidos de progressão de regime, livramento condicional, indulto.</p>
-                    </div>
-                </div>
-            </div>
-            <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Quero mais informações</a>
-        </div>
-    </section>
-
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
