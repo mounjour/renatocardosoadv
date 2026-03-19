@@ -490,7 +490,16 @@
             background: #222;
             padding: 80px 0;
         }
-
+        .numero{
+            justify-content: center;
+            display: none;
+            background: rgb(0, 19, 61);
+            padding-top: 10px;
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+            opacity: 1;
+        }
         .faq h2 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -764,6 +773,9 @@
         }
 
         @media (max-width: 768px) {
+            .numero{
+                display: flex;
+            }
             .about{
                 padding: 0;
             }
@@ -843,7 +855,7 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
-        <p style="background: rgb(0, 19, 61); padding-top: 10px; text-align: center; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.342); opacity: 1;"><i class="fa-solid fa-phone"></i> (67) 993172313<br><br></p>
+        <p class="numero"><i class="fa-solid fa-phone"></i> (67) 993172313<br><br></p>
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-logo">
