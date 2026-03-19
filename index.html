@@ -75,6 +75,9 @@
         }
 
         /* Hero Section */
+        .hero .btn{
+            margin-top: 50px;
+        }
         .hero {
             height: 100vh;
             width: 100%;
@@ -115,7 +118,7 @@
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 25px;
@@ -124,10 +127,9 @@
             color: var(--orange);
         }
 
-        .hero-text .subtitle {
+        .subtitle {
             font-size: 1.2rem;
             line-height: 1.6;
-            margin-bottom: 35px;
             color: rgba(255, 255, 255, 0.9);
             max-width: 500px;
         }
@@ -708,7 +710,7 @@
 
         @media (max-width: 768px) {
             .hero-text h1{
-                font-size: 1.9rem;
+                font-size: 1.5rem;
             }
             .hero-logo{
                 display: none;
@@ -718,7 +720,7 @@
                 display: flex;
             }
             .hero-logo2 img{
-                width: 210px;
+                width: 260px;
             }
             .btn i{
                 margin-right: 5px;
@@ -739,11 +741,15 @@
                 margin-bottom: 40px;
             }
 
-            .hero-text .subtitle {
+            .subtitle {
+                text-align: start;
+                font-size: 1.0rem;
                 margin-left: auto;
                 margin-right: auto;
             }
-
+            .hero .btn{
+                margin-top: 40px;
+            }
             .hero-image {
                 justify-content: center;
             }
@@ -786,8 +792,15 @@
                 <div class="hero-logo2">
                     <img src="logo2.png" alt="Logo">
                 </div>
-                <h1>Enfrentar um <strong>crime</strong> assusta. Ter alguém que te escuta e <strong>te defende</strong> faz toda a diferença.</h1>
-                <p class="subtitle">Assessoria jurídica com escuta ativa, estratégia e discrição — da delegacia às instâncias superiores. Fale agora pelo WhatsApp.</p>
+                <h1>Advogado <strong>Criminalista</strong> | Atuação em <strong>Ponta Porã/MS</strong> e região de fronteira.  <strong>Atendimento 24h</strong>. 
+Defesa técnica, ágil e estratégica em casos de:</h1>
+                <p class="subtitle">🚔 Flagrante e Audiência de Custódia.</p>
+                <p class="subtitle">🚨 Tráfico de Drogas</p>
+                <p class="subtitle">📦 Contrabando e Descaminho  </p>
+                <p class="subtitle">🚗 Apreensão e Restituição de Veículos</p>
+                <p class="subtitle">⚖️ Tribunal do Júri (Crimes contra a vida)</p>
+                <p class="subtitle">🛡️ Habeas Corpus e Recursos Criminais</p>
+                <p class="subtitle">📑 Acompanhamento em Delegacia  </p>
                 <a href="https://wa.me/5567993172313?text=Ol%C3%A1%2C%20vim%20pelo%20Google%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" class="btn"><i class="fa-brands fa-whatsapp"></i> Fale com um profissional</a>
             </div>
             <div class="hero-image">
@@ -819,8 +832,8 @@
     <!-- Carousel Section - AGORA COM CARDS EM TELA CHEIA -->
     <section class="carousel-section">
         <div class="container">
-            <h2>Atuação ampla, técnica e estratégica para os momentos mais delicados</h2>
-            
+            <h2>Está sendo investigado, acusado ou preso em flagrante?</h2>
+            <p class=".subtitle">Fale agora comigo, sou o Dr. Thiago Cardoso, advogado criminalista e posso te ajudar!</p>
             <div class="carousel-container">
                 <button class="carousel-btn prev" onclick="moveCarousel(-1)">←</button>
                 <button class="carousel-btn next" onclick="moveCarousel(1)">→</button>
@@ -828,32 +841,32 @@
                 <div class="carousel-track" id="carouselTrack">
                     <div class="carousel-item">
                         <div class="lado">
-                            <h3>Direito Criminal</h3>
-                            <p>Defesa estratégica em todas as fases do processo criminal, desde o inquérito policial até os tribunais superiores. Atuação focada em garantir seus direitos fundamentais, liberdade e a melhor solução para seu caso, seja na esfera estadual ou federal.</p>
+                            <h3>Defesa em Flagrante</h3>
+                            <p>Atendimento emergencial 24 horas para atuar imediatamente após a prisão. Analisamos a legalidade do auto de prisão em flagrante, identificamos possíveis ilegalidades e adotamos as medidas cabíveis para garantir a liberdade do cliente, seja mediante pagamento de fiança ou pedido de relaxamento da prisão.</p>
                         </div>
                         <img src="blog/blog1.webp" alt="Direito Criminal">
 
                     </div>
                     <div class="carousel-item">
                         <div class="lado">
-                            <h3>Tribunal do Júri</h3>
-                            <p>Atuação especializada em crimes dolosos contra a vida, com preparo técnico e argumentação persuasiva perante o conselho de sentença. Preparação minuciosa de teses defensivas, estudo aprofundado das provas e estratégias personalizadas para cada julgamento.</p>
+                            <h3>Contrabando e Descaminho</h3>
+                            <p>Assessoria jurídica para crimes contra a ordem tributária e o comércio internacional. Atuamos na defesa de importadores, comerciantes e transportadores, analisando a tipificação correta da conduta, o valor da mercadoria e as possibilidades de extinção da punibilidade.</p>
                         </div>
                         <img src="blog/blog2.webp" alt="Tribunal do Júri">
 
                     </div>
                     <div class="carousel-item">
                         <div class="lado">
-                            <h3>Execução Penal</h3>
-                            <p>Acompanhamento completo de todas as fases da execução penal, desde o ingresso no sistema prisional até a liberdade definitiva. Atuamos na conquista e manutenção de benefícios, progressões de regime e todas as questões relacionadas ao cumprimento da pena.</p>
+                            <h3>Organização Criminosa</h3>
+                            <p>Defesa estratégica em investigações e processos complexos envolvendo associações criminosas estruturadas. Atuamos no controle da legalidade das provas, na análise crítica de colaborações premiadas e na garantia dos direitos fundamentais durante toda a persecução penal.</p>
                         </div>
                         <img src="blog/blog3.webp" alt="Execução Penal">
 
                     </div>
                     <div class="carousel-item">
                         <div class="lado">
-                            <h3>Habeas Corpus</h3>
-                            <p>Elaboração e impetração estratégica de habeas corpus em todas as instâncias, desde os tribunais de justiça até o Supremo Tribunal Federal. Atuação emergencial 24 horas para situações que exigem resposta imediata.</p>
+                            <h3>Habeas Corpus Criminal</h3>
+                            <p>Impetração de habeas corpus em todas as instâncias para proteger o direito de ir e vir. Atuamos no trancamento de inquéritos policiais sem justa causa, na revogação de prisões preventivas ilegais ou desnecessárias e na garantia do direito de recorrer em liberdade.</p>
                         </div>
                         <img src="blog/blog4.webp" alt="Habeas Corpus">
 
@@ -873,15 +886,15 @@
                 <div class="card">
                     <img src="cards/card1.png" alt="Conteúdo 1">
                     <div class="card-content">
-                        <h3>Direitos do acusado</h3>
+                        <h3>Defesa em Flagrante</h3>
                         <p>Conheça seus direitos fundamentais em um processo criminal e como eles podem protegê-lo.</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="cards/card2.png" alt="Conteúdo 2">
                     <div class="card-content">
-                        <h3>Difamação e calúnia</h3>
-                        <p>Entenda as diferenças entre crimes contra a honra e como se defender dessas acusações.</p>
+                        <h3>Tráfico de drogas</h3>
+                        <p>Defesa técnica especializada para casos de acusação por tráfico de entorpecentes.</p>
                     </div>
                 </div>
                 <div class="card">
@@ -894,8 +907,8 @@
                 <div class="card">
                     <img src="cards/card4.png" alt="Conteúdo 4">
                     <div class="card-content">
-                        <h3>Fiança criminal</h3>
-                        <p>Quando é possível pagar fiança e como funciona esse direito em diferentes tipos de crime.</p>
+                        <h3>Contrabando e Descaminho</h3>
+                        <p>Assessoria jurídica para crimes contra a ordem tributária e o comércio internacional. Atuamos na defesa de importadores, comerciantes e transportadores.</p>
                     </div>
                 </div>
                 <div class="card">
@@ -908,8 +921,8 @@
                 <div class="card">
                     <img src="cards/card6.png" alt="Conteúdo 6">
                     <div class="card-content">
-                        <h3>Prescrição penal</h3>
-                        <p>Entenda o que é prescrição penal e quando ela pode beneficiar o acusado.</p>
+                        <h3>Execução penal</h3>
+                        <p>Acompanhamento da fase de cumprimento da pena, zelando pelos direitos do apenado. Realizamos pedidos de progressão de regime, livramento condicional, indulto.</p>
                     </div>
                 </div>
             </div>
@@ -1040,7 +1053,7 @@
             if(user==false){
                 moveCarousel(1)
             }
-        }, 3000)
+        }, 5000)
         // Opcional: Adiciona suporte para teclas do teclado no carrossel
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') {
